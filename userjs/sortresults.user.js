@@ -10,11 +10,11 @@ function sort(sortKey)
 {
 	function getProgress(a)
 	{
-		var car = document.getElementById(a.id.replace("player", "car"));
-		var left = parseInt(car.style.left);
-		if (isNaN(left))
-			left = 0;
-		return left;
+        	var rating = document.getElementById(a.id.replace("player", "rating"));
+        	if (!rating || !rating.childNodes[0])
+            		return 100500 - getProgress(a);
+	 	var text = rating.childNodes[0].firstChild.innerHTML
+        	return parseInt(text,10);
 	}
 
 	function getPlace(a)
